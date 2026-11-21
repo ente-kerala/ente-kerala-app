@@ -1,6 +1,5 @@
-* {
-  box-sizing: border-box;
-}
+
+* { box-sizing: border-box; }
 
 :root {
   --green: #087f5b;
@@ -19,85 +18,85 @@ header {
   background: linear-gradient(135deg, #087f5b, #064b38);
   color: white;
   text-align: center;
-  padding: 55px 20px;
+  padding: 35px 15px;
 }
 
 header h1 {
-  font-size: 34px;
+  font-size: 32px;
   letter-spacing: 2px;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
-header p {
-  font-size: 16px;
-  margin: 0;
-}
+header p { margin: 0; }
 
 main {
-  max-width: 650px;
-  margin: 35px auto;
-  padding: 35px 22px;
+  max-width: 750px;
+  margin: 25px auto;
+  padding: 25px 16px;
   text-align: center;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 5px 25px rgba(0,0,0,.07);
 }
 
 main h2 {
   color: var(--green);
-  font-size: 25px;
-  line-height: 1.5;
+  font-size: 24px;
 }
 
 main p {
-  font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.7;
 }
 
-.open-app,
-#installBtn {
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+  margin: 25px 0;
+}
+
+.category {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 8px;
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #18352b;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.category span { font-size: 32px; }
+.category b { font-size: 15px; }
+
+.category:active { transform: scale(.97); }
+
+.emergency {
+  border: 1px solid #e8aaaa;
+  background: #fff5f5;
+  color: #a32121;
+}
+
+.open-app {
   display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 18px auto;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 10px;
+  max-width: 320px;
+  margin: 25px auto;
+  padding: 16px;
   background: var(--green);
   color: white;
-  font-size: 17px;
-  font-weight: bold;
+  border-radius: 10px;
   text-decoration: none;
-  cursor: pointer;
-}
-
-.open-app:hover,
-#installBtn:hover {
-  background: var(--dark);
+  font-weight: bold;
 }
 
 footer {
   text-align: center;
-  padding: 25px 15px;
+  padding: 20px;
   color: #66756e;
   font-size: 14px;
 }
 
-[hidden] {
-  display: none !important;
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 40px 15px;
-  }
-
-  main {
-    margin: 20px 12px;
-    padding: 25px 18px;
-  }
-
-  main h2 {
-    font-size: 22px;
-  }
+@media (min-width: 600px) {
+  .categories { grid-template-columns: repeat(3, 1fr); }
 }
