@@ -1,0 +1,12 @@
+{
+  "name": "ENTE KERALA",
+  "short_name": "ENTE KERALA",
+  "description": "നമ്മുടെ നാട്, നമ്മുടെ സേവനങ്ങൾ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f8f6",
+  "theme_color": "#087f5b",
+  "lang": "ml"
+}
