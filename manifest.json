@@ -1,23 +1,25 @@
 {
+  "id": "/ente-kerala-app/",
   "name": "ENTE KERALA",
   "short_name": "ENTE KERALA",
   "description": "നമ്മുടെ നാട്, നമ്മുടെ സേവനങ്ങൾ",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/ente-kerala-app/",
+  "scope": "/ente-kerala-app/",
   "display": "standalone",
+  "display_override": ["standalone"],
   "orientation": "portrait",
   "background_color": "#f4f8f6",
   "theme_color": "#087f5b",
   "lang": "ml",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "/ente-kerala-app/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icon-512.png",
+      "src": "/ente-kerala-app/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
