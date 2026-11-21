@@ -5,157 +5,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087f5b">
-  <meta name="description" content="കേരളത്തിലെ എല്ലാ പ്രാദേശിക സേവനങ്ങളും ഒരിടത്ത്">
+  <meta name="description" content="നമ്മുടെ നാട്, നമ്മുടെ സേവനങ്ങൾ">
   <title>ENTE KERALA</title>
-
-  <link rel="manifest" href="/ente-kerala-app/manifest.json">
-  <link rel="icon" href="/ente-kerala-app/icon-192.png">
-  <link rel="stylesheet" href="/ente-kerala-app/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header class="topbar" id="home">
-    <div class="brand">
-      <div class="brand-icon">E</div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">E</div>
+    <div>
+      <h1>ENTE KERALA</h1>
+      <p>കേരളം മുഴുവൻ · നമ്മുടെ സേവനങ്ങൾ</p>
+    </div>
+  </div>
+  <a class="register-small" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec?page=register">രജിസ്റ്റർ ചെയ്യാം</a>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="hero-tag">നമ്മുടെ സ്വന്തം കേരളം</span>
+    <h2>നിങ്ങൾക്ക് വേണ്ടതെല്ലാം ഇനി ഒരിടത്ത്!</h2>
+    <p>സേവനങ്ങൾ, വാഹനങ്ങൾ, ജോലികൾ, ബിസിനസുകൾ തുടങ്ങി എല്ലാം കണ്ടെത്താം.</p>
+    <div class="search-box">
+      <span>🔎</span>
+      <input id="searchInput" type="search" placeholder="എന്താണ് തിരയുന്നത്?">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
       <div>
-        <h1>ENTE <span>KERALA</span></h1>
-        <p>നമ്മുടെ നാട്, നമ്മുടെ സേവനങ്ങൾ</p>
+        <h2>സേവന വിഭാഗങ്ങൾ</h2>
+        <p>നിങ്ങൾക്ക് ആവശ്യമുള്ള വിഭാഗം തിരഞ്ഞെടുക്കൂ</p>
       </div>
     </div>
-    <div class="location">📍 കേരളം മുഴുവൻ</div>
-  </header>
+    <div id="categories" class="category-grid">
+      <div class="loading">വിഭാഗങ്ങൾ ലഭ്യമാക്കുന്നു...</div>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <span class="tag">WELCOME TO ENTE KERALA</span>
-        <h2>നിങ്ങൾക്ക് വേണ്ടതെല്ലാം<br><span>ഇനി ഒരിടത്ത്!</span></h2>
-        <p>സേവനങ്ങൾ കണ്ടെത്താം. ബിസിനസ് വളർത്താം.<br>നമ്മുടെ നാട്ടിലെ ആളുകളുമായി ബന്ധപ്പെടാം.</p>
-        <a class="hero-button" href="#categories">സേവനങ്ങൾ കണ്ടെത്താം <span>→</span></a>
-      </div>
-      <div class="hero-symbol">കേരളം<br><span>♥</span></div>
-    </section>
-
-    <section class="search-section">
-      <div class="search-box">
-        <span>⌕</span>
-        <input id="searchInput" type="search"
-          placeholder="എന്താണ് നിങ്ങൾ അന്വേഷിക്കുന്നത്?">
-      </div>
-      <p>വാഹനം, ജോലി, ഡോക്ടർ, ഇലക്ട്രീഷ്യൻ തുടങ്ങി തിരയാം</p>
-    </section>
-
-    <section class="section" id="categories">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">EXPLORE</span>
-          <h2>സേവന വിഭാഗങ്ങൾ</h2>
-        </div>
-        <span class="section-count">10 വിഭാഗങ്ങൾ</span>
-      </div>
-
-      <div class="category-grid" id="categoryGrid">
-        <a class="category-card" data-search="വാഹനങ്ങൾ വാഹനം car bike auto taxi vehicle" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon green">🚗</span>
-          <b>വാഹനങ്ങൾ</b><small>Vehicles</small>
-        </a>
-
-        <a class="category-card" data-search="ബസ് ബസ്സ് യാത്ര bus travel" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon blue">🚌</span>
-          <b>ബസ്</b><small>Bus Services</small>
-        </a>
-
-        <a class="category-card" data-search="ഹോം സർവീസുകൾ electrician plumber repair വീട്ടുപണി" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon orange">🛠️</span>
-          <b>ഹോം സർവീസുകൾ</b><small>Home Services</small>
-        </a>
-
-        <a class="category-card" data-search="ആരോഗ്യം ആശുപത്രി ഡോക്ടർ health hospital doctor" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon red">🏥</span>
-          <b>ആരോഗ്യം</b><small>Health</small>
-        </a>
-
-        <a class="category-card" data-search="ഷോപ്പിംഗ് കടകൾ shopping stores" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon pink">🛍️</span>
-          <b>ഷോപ്പിംഗ്</b><small>Shopping</small>
-        </a>
-
-        <a class="category-card" data-search="പ്രോപ്പർട്ടി വീട് സ്ഥലം property real estate" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon purple">🏠</span>
-          <b>പ്രോപ്പർട്ടി</b><small>Property</small>
-        </a>
-
-        <a class="category-card" data-search="ജോലികൾ ജോലി തൊഴിൽ jobs employment" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon yellow">💼</span>
-          <b>ജോലികൾ</b><small>Jobs</small>
-        </a>
-
-        <a class="category-card" data-search="ബിസിനസ് വ്യാപാരം business shops" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon teal">🏪</span>
-          <b>ബിസിനസ്</b><small>Business</small>
-        </a>
-
-        <a class="category-card" data-search="അടിയന്തര സേവനങ്ങൾ emergency ambulance police fire" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon red">🚨</span>
-          <b>അടിയന്തര സേവനങ്ങൾ</b><small>Emergency</small>
-        </a>
-
-        <a class="category-card" data-search="പരസ്യങ്ങൾ പരസ്യം advertisements ads" href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
-          <span class="category-icon blue">📢</span>
-          <b>പരസ്യങ്ങൾ</b><small>Advertisements</small>
-        </a>
-      </div>
-      <p id="noResults" hidden>ഈ പേരിൽ വിഭാഗങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</p>
-    </section>
-
-    <section class="register-banner" id="register">
+  <section id="adsSection" class="section hidden">
+    <div class="section-heading">
       <div>
-        <span class="eyebrow">GROW WITH US</span>
-        <h2>നിങ്ങളുടെ സേവനവും<br>കേരളത്തെ അറിയിക്കൂ!</h2>
-        <p>നിങ്ങളുടെ ബിസിനസ് അല്ലെങ്കിൽ സേവനം ENTE KERALA-യിൽ രജിസ്റ്റർ ചെയ്യാം.</p>
+        <h2>പ്രത്യേക പരസ്യങ്ങൾ</h2>
+        <p>നമ്മുടെ നാട്ടിലെ സ്ഥാപനങ്ങൾ</p>
       </div>
-      <a href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">രജിസ്റ്റർ ചെയ്യാം →</a>
-    </section>
-  </main>
+    </div>
+    <div id="adsList" class="ads-list"></div>
+  </section>
 
-  <nav class="bottom-nav">
-    <a class="active" href="#home"><span>⌂</span>Home</a>
-    <a href="#categories"><span>▦</span>Services</a>
-    <a href="#register"><span>＋</span>Register</a>
-  </nav>
+  <section id="servicesSection" class="section">
+    <div class="section-heading">
+      <div>
+        <h2 id="servicesTitle">അംഗീകൃത സേവനങ്ങൾ</h2>
+        <p id="servicesSubtitle">കേരളത്തിലെ സേവനദാതാക്കളെ കണ്ടെത്താം</p>
+      </div>
+      <button id="clearFilter" class="clear-button hidden">എല്ലാം കാണുക</button>
+    </div>
+    <div id="servicesList" class="services-list">
+      <div class="loading">സേവനങ്ങൾ ലഭ്യമാക്കുന്നു...</div>
+    </div>
+  </section>
 
-  <footer>
-    <b>ENTE KERALA</b>
-    <p>നമ്മുടെ കേരളം, നമ്മുടെ സ്വന്തം പ്ലാറ്റ്ഫോം</p>
-    <small>© 2026 ENTE KERALA</small>
-  </footer>
+  <section class="join-banner">
+    <div>
+      <span>നിങ്ങളും ഭാഗമാകൂ</span>
+      <h2>നിങ്ങളുടെ സേവനവും കേരളത്തെ അറിയിക്കൂ!</h2>
+      <p>സൗജന്യമായി സർവീസ് രജിസ്റ്റർ ചെയ്യാം.</p>
+    </div>
+    <a href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec?page=register">രജിസ്റ്റർ ചെയ്യുക →</a>
+  </section>
 
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const cards = document.querySelectorAll(".category-card");
-    const noResults = document.getElementById("noResults");
+  <p id="lastUpdated" class="last-updated"></p>
+</main>
 
-    searchInput.addEventListener("input", () => {
-      const term = searchInput.value.trim().toLowerCase();
-      let visible = 0;
+<nav class="bottom-nav">
+  <a href="#" class="active" onclick="showAllServices();return false;">🏠<span>Home</span></a>
+  <a href="#categories">📂<span>വിഭാഗങ്ങൾ</span></a>
+  <a href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec?page=register">➕<span>രജിസ്റ്റർ</span></a>
+</nav>
 
-      cards.forEach(card => {
-        const words = card.dataset.search.toLowerCase();
-        const match = words.includes(term);
-        card.hidden = !match;
-        if (match) visible++;
-      });
-
-      noResults.hidden = visible !== 0;
+<script src="app.js" defer></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('service-worker.js');
     });
+  }
+</script>
 
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register(
-          "/ente-kerala-app/service-worker.js"
-        ).catch(error => console.log(error));
-      });
-    }
-  </script>
 </body>
 </html>
