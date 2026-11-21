@@ -1,15 +1,18 @@
 // ENTE KERALA APP
 
-console.log("ENTE KERALA App Loaded");
+console.log("ENTE KERALA is ready");
+
+const installButton = document.getElementById("installBtn");
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./service-worker.js")
-      .then(function () {
-        console.log("App service worker registered");
-      })
-      .catch(function (error) {
-        console.log("Service worker error:", error);
-      });
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register(
+        "/ente-kerala-app/service-worker.js"
+      );
+      console.log("Service Worker registered");
+    } catch (error) {
+      console.error("Service Worker error:", error);
+    }
   });
 }
