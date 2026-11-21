@@ -2,34 +2,65 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087f5b">
+  <meta name="description" content="കേരളത്തിലെ എല്ലാ പ്രാദേശിക സേവനങ്ങളും ഒരിടത്ത്">
   <title>ENTE KERALA</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+  <link rel="manifest" href="/ente-kerala-app/manifest.json">
+  <link rel="icon" href="/ente-kerala-app/icon-192.png">
+  <link rel="apple-touch-icon" href="/ente-kerala-app/icon-192.png">
+  <link rel="stylesheet" href="/ente-kerala-app/style.css">
+</head>
+
+<body>
   <header>
     <h1>ENTE KERALA</h1>
     <p>നമ്മുടെ നാട്, നമ്മുടെ സേവനങ്ങൾ</p>
   </header>
 
   <main>
-    <h2>കേരളത്തിലെ സേവനങ്ങൾ ഇനി വിരൽത്തുമ്പിൽ!</h2>
-    <p>വാഹനങ്ങൾ, ബസ്, ഹോം സർവീസുകൾ, ഹെൽത്ത്, ഷോപ്പിംഗ്, ജോലി തുടങ്ങി നിരവധി സേവനങ്ങൾ ഒരിടത്ത്.</p>
+    <h2>എല്ലാ സേവനങ്ങളും ഇനി ഒരിടത്ത്!</h2>
+    <p>കേരളത്തിലെ സേവനങ്ങൾ കണ്ടെത്താനും നിങ്ങളുടെ സേവനങ്ങൾ രജിസ്റ്റർ ചെയ്യാനും ENTE KERALA ഉപയോഗിക്കൂ.</p>
+
+    <button id="installBtn" hidden>ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക</button>
 
     <a class="open-app"
-       href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec"
-       target="_blank">
+       href="https://script.google.com/macros/s/AKfycbzxSZaD2AsoHgTgBSr_NEtya1v9mZZRsojoP_Ygkv1qpIEinimffXeDYyB50ieLLB5v3Q/exec">
        സേവനങ്ങൾ കാണാം
     </a>
   </main>
 
   <footer>
     <p>ENTE KERALA © 2026</p>
+    <p>നമ്മുടെ കേരളം, നമ്മുടെ സ്വന്തം ആപ്പ്</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register(
+          "/ente-kerala-app/service-worker.js"
+        ).catch(error => console.error(error));
+      });
+    }
+
+    let installPrompt;
+    const installBtn = document.getElementById("installBtn");
+
+    window.addEventListener("beforeinstallprompt", event => {
+      event.preventDefault();
+      installPrompt = event;
+      installBtn.hidden = false;
+    });
+
+    installBtn.addEventListener("click", async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null;
+      installBtn.hidden = true;
+    });
+  </script>
 </body>
 </html>
