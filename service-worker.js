@@ -1,4 +1,5 @@
-const CACHE_NAME = "ente-kerala-v3";
+
+const CACHE_NAME = "ente-kerala-v4";
 
 const APP_FILES = [
   "/ente-kerala-app/",
@@ -20,9 +21,9 @@ self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys
-          .filter(key => key.startsWith("ente-kerala-") && key !== CACHE_NAME)
-          .map(key => caches.delete(key))
+        keys.filter(key =>
+          key.startsWith("ente-kerala-") && key !== CACHE_NAME
+        ).map(key => caches.delete(key))
       )
     )
   );
@@ -33,8 +34,12 @@ self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
-    })
+    fetch(event.request).then(response => {
+      if (response && response.ok && event.request.url.includes("/ente-kerala-app/")) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+      }
+      return response;
+    }).catch(() => caches.match(event.request))
   );
 });
